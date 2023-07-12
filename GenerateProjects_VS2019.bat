@@ -1,0 +1,2 @@
+call Dependendencies\Premake\premake5 vs2019
+PAUSE
