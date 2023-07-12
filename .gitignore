@@ -1,0 +1,12 @@
+#directories 
+.vs/
+bin/
+bin-int/
+Aux0/lib/Debug-windows-x86_64/
+Aux0/lib/Release-windows-x86_64/
+
+#files
+*.user
+*.vcxproj
+*.filters
+*.sln
