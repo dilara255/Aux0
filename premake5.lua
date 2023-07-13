@@ -1,5 +1,7 @@
---should change AS_ prefix on defines later
-workspace "FoF_AS"
+--should change AS_ prefix on defines later (after compiling an testing)
+
+--SOLUTION: Aux0_frozen
+workspace "Aux0_frozen"
 	startproject "TestApp"
 
 	configurations {"Debug", "Release"}
@@ -28,7 +30,7 @@ workspace "FoF_AS"
 	binDir = "bin/" .. outputdir .. "/%{prj.name}"
 	binIntDir = "bin-int/" .. outputdir .. "/%{prj.name}"
 	
-
+--PROJECT: Aux0
 project "Aux0"
 	location "Aux0"
 	kind "Staticlib"
@@ -92,7 +94,8 @@ project "Aux0"
 	postbuildcommands{
 		("{COPY} %{cfg.buildtarget.relpath} %{LibDir.AUX0}")
 	}
-	
+
+--PROJECT: testApp
 project "TestApp"
 	location "TestApp"
 	kind "ConsoleApp"
@@ -148,4 +151,4 @@ project "TestApp"
 
 	filter "configurations:Release"
 		defines	"AS_RELEASE"
-		optimize "on" 		
+		optimize "on" 	
